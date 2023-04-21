@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link ... href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="style.css" class="css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+        height: auto;
+        width: 100%;
+      }
+      h3 {
+        top: 10%;
+        color: red;
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: underline cornsilk;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #282828;
+      }
+
+      .active {
+        background-color: #f5430c;
+      }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      #image {
+        display: none;
+      }
+      #btnID {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h2 {
+        color: #f5430c;
+
+        text-decoration: underline cornsilk;
+      }
+      p {
+        color: white;
+        font-size: 1.5em;
+        background-color: black;
+      }
+      span {
+        color: #f5430c;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <ul class="join">
+        <li class="active"><a href="#about">About</a></li>
+        <li class="em"><a href="#skills">Tech used</a></li>
+        <li class="em"><a href="#Team">Team</a></li>
+      </ul>
+    </nav>
+    <h3
+      class="mt-5 ab"
+      style="
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      Fighting Detection
+    </h3>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="container"></div>
+
+          <img
+            class="center"
+            id="image"
+            src="{{ url_for('video_feed') }}"
+            width="60%"
+            height="60%"
+          />
+        </div>
+        <div class="container"></div>
+        <button
+          type="button"
+          class="btn btn-danger"
+          onclick="show()"
+          id="btnID"
+        >
+          Start Detection
+        </button>
+        <!-- <button class="button" type="button">Start Detection</button> -->
+
+        <script>
+          function show() {
+            document.getElementById("image").style.display = "block";
+
+            document.getElementById("btnID").style.display = "none";
+          }
+        </script>
+        <div class="about" id="about">
+          <h2>About Project</h2>
+          <p>
+            A violence detection model is an artificial intelligence system
+            designed to recognize and identify instances of violence or
+            aggression in various forms of media, such as images, videos, or
+            audio recordings. The model uses machine learning algorithms to
+            analyze visual and auditory cues, including body language, facial
+            expressions, tone of voice, and contextual information, to determine
+            whether a particular piece of content contains violent or aggressive
+            behavior. The ultimate goal of a violence detection model is to
+            provide an automated way to monitor potentially harmful content and
+            alert relevant authorities, such as law enforcement agencies or
+            social media platforms, to take appropriate action.
+          </p>
+        </div>
+        <div class="skills" id="skills">
+          <h2>Technology Used</h2>
+          <p>
+            <span>Frontend :- </span>HTML , CSS , JAVASCRIPT.<br />
+            <span>Backend :-</span>OpenCv , Tensorflow , Numpy, Flask.
+          </p>
+        </div>
+        <div class="Team" id="Team">
+          <h2>Team Members</h2>
+          <p>
+            <span>G Akash </span> 120EC0412<br />
+            <span>P Vamshi</span> 120EC0442<br />
+            <span>B Rishi Kumar</span> 120EC0859<br />
+            <span>J Rishkeshwareddy</span> 120EC0869<br />
+            <span> M Likith Kumar Reddy</span> 120EC0870<br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
